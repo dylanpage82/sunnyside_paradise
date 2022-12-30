@@ -1,9 +1,9 @@
 
 import { useState, useEffect } from 'react';
 import AuthPage from '../AuthPage/AuthPage'
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import FruitsPage from '../FruitsPage/FruitsPage';
+import AllInclusivePage from '../AllInclusivePage/AllInclusivePage';
+import CruisesPage from '../CruisesPage/CruisesPage';
+import AllExclusivePage from '../AllExclusivePage/AllExclusivePage';
 import NavBar from '../../components/ NavBar/NavBar';
 import { Routes, Route} from 'react-router-dom'
 
@@ -32,10 +32,9 @@ export default function App() {
         <>
         <NavBar />
           <Routes>
-            <Route path="/fruits" element={<FruitsPage />} />
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage/>} />
-            <Route path="/" element={<NewOrderPage />} />
+            <Route path="/cruises" element={<CruisesPage />} />
+            <Route path="/exclusive" element={<AllExclusivePage />} />
+            <Route path="/inclusive" element={<AllInclusivePage />} />
           </Routes>
         </>
          :

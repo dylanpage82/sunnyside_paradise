@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { dataController, apiController } = require('../../controllers/api/fruits')
+const { dataController, apiController } = require('../../controllers/api/locations')
 
 // add routes
 // Index /api/fruits

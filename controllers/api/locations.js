@@ -1,73 +1,69 @@
-const Fruit = require('../../models/fruit')
+const Location = require('../../models/location')
 
 const dataController = {
-// Index
+
   index (req, res, next) {
-    Fruit.find({}, (err, allFruits) => {
+    Location.find({}, (err, allLocations) => {
       if (err) {
         res.status(404).send({
           msg: err.message
         })
       } else {
-        res.locals.data.fruits = allFruits
+        res.locals.data.locations = allLocations
         next()
       }
     })
   },
-  // Delete
+  
   destroy (req, res, next) {
-    Fruit.findByIdAndDelete(req.params.id, (err, deletedFruit) => {
+    Location.findByIdAndDelete(req.params.id, (err, deletedLocation) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.fruit = deletedFruit
+        res.locals.data.location = deletedLocation
         next()
       }
     })
   },
-  // Update
+  
   update (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'
-    Fruit.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedFruit) => {
+    Location.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedLocation) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.fruit = updatedFruit
+        res.locals.data.location = updatedLocation
         next()
       }
     })
   },
-  // Create
+  
   create (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'|| req.body.readyToEat === true ? true: false
-    // Use Model to create Fruit Document
-    Fruit.create(req.body, (err, createdFruit) => {
-      // Once created - respond to client
+    
+    Location.create(req.body, (err, createdLocation) => {
       if (err) {
         res.status(404).send({
           msg: err.message
         })
       } else {
-        res.locals.data.fruit = createdFruit
+        res.locals.data.location = createdLocation
         next()
       }
     })
   },
 
-  // Edit
-  // Show
+  
   show (req, res, next) {
-    Fruit.findById(req.params.id, (err, foundFruit) => {
+    Location.findById(req.params.id, (err, foundLocation) => {
       if (err) {
         res.status(404).send({
           msg: err.message
         })
       } else {
-        res.locals.data.fruit = foundFruit
+        res.locals.data.location = foundLocation
         next()
       }
     })
@@ -76,10 +72,10 @@ const dataController = {
 
 const apiController = {
     index(req, res, next){
-      res.json(res.locals.data.fruits)
+      res.json(res.locals.data.locations)
     },
     show(req, res, next){
-      res.json(res.locals.data.fruit)
+      res.json(res.locals.data.locations)
     }
   }
 
