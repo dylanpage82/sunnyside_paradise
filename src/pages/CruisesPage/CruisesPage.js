@@ -89,7 +89,7 @@ useEffect(()=> {
                     <main>
                         {
                             locations
-                                .filter((i) => i.category === true)
+                                // .filter((i) => i.category === Test)
                                 .map((location) => {
                                     return (
                                         <>

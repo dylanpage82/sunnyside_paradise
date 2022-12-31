@@ -89,7 +89,7 @@ useEffect(()=> {
                     <main>
                         {
                             locations
-                                .filter((i) => i.category === true)
+                                // .filter((i) => i.category === true)
                                 .map((location) => {
                                     return (
                                         <>
@@ -104,7 +104,7 @@ useEffect(()=> {
                                 })
                         }
                     </main>
-                ):<h1>Nothing Here Yet</h1>
+                ):<h1></h1>
             }
         </>
     )
