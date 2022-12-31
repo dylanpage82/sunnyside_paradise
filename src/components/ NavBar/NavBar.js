@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   return (
     <nav>
-      <Link to="/orders">Order History</Link>
+      <Link to="/inclusive">All Inclusive Resorts</Link>
       &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
+      <Link to="/cruises">Cruises</Link>
+      &nbsp; | &nbsp;
+      <Link to="/exclusive">Resorts</Link>
     </nav>
   );
 }

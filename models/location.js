@@ -1,10 +1,12 @@
 const {Schema, model} = require('mongoose')
 
 const locationSchema = new Schema({
+    title: String,
+    destination:String,
     category: String,
     url: String,
     image: String,
-    text: String
+    text:String
 }, {
     timestamps:true
 })
