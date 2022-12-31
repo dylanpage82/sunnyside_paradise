@@ -5,6 +5,8 @@ import AllInclusivePage from '../AllInclusivePage/AllInclusivePage';
 import CruisesPage from '../CruisesPage/CruisesPage';
 import AllExclusivePage from '../AllExclusivePage/AllExclusivePage';
 import NavBar from '../../components/ NavBar/NavBar';
+import ImageSlider from '../../components/ImgSlider/ImageSlider';
+import images from '../../components/ImgSlider/images';
 import { Routes, Route} from 'react-router-dom'
 
 export default function App() {
@@ -31,6 +33,7 @@ export default function App() {
         user ?
         <>
         <NavBar />
+       <ImageSlider images={images}/>
           <Routes>
             <Route path="/cruises" element={<CruisesPage />} />
             <Route path="/exclusive" element={<AllExclusivePage />} />

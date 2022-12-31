@@ -86,24 +86,24 @@ useEffect(()=> {
         <>
             {
                 locations && locations.length ? (
-                    <main>
+                    <div>
                         {
                             locations
                                 // .filter((i) => i.category === true)
                                 .map((location) => {
                                     return (
-                                        <>
+                                        <main key={location._id}>
                                         <h1>{location.title}</h1>
                                         <h3>{location.destination}</h3>
                                         <img src={location.image} />
                                         <p>{location.text}</p>
                                         <button onClick={location.url}>BOOK HERE</button>
                                         
-                                        </>                 
+                                        </main>                 
                                     )
                                 })
                         }
-                    </main>
+                    </div>
                 ):<h1></h1>
             }
         </>
