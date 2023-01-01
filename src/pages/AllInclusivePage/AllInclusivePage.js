@@ -89,17 +89,17 @@ useEffect(()=> {
                     <main>
                         {
                             locations
-                                .filter((i) => i.category === true)
+                                .filter(location => location.category==2)
                                 .map((location) => {
                                     return (
-                                        <>
+                                        <main className='vacation' key={location._id}>
                                         <h1>{location.title}</h1>
                                         <h3>{location.destination}</h3>
                                         <img src={location.image} />
                                         <p>{location.text}</p>
-                                        <button onClick={location.url}>BOOK HERE</button>
+                                        <button onClick={location.url}>VIEW RESORT</button>
                                         
-                                        </>                 
+                                        </main>                 
                                     )
                                 })
                         }

@@ -7,6 +7,7 @@ import AllExclusivePage from '../AllExclusivePage/AllExclusivePage';
 import NavBar from '../../components/ NavBar/NavBar';
 import ImageSlider from '../../components/ImgSlider/ImageSlider';
 import images from '../../components/ImgSlider/images';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import { Routes, Route} from 'react-router-dom'
 
 export default function App() {
@@ -28,22 +29,26 @@ export default function App() {
   }, [])
   
   return (
-    <main className="App">
+    <div className="App">
+      <div className='header'>
+        <h1 className='title'>SunnySide Paradise</h1>
+        {/* <nav><SearchBar /></nav> */}
+        </div>
       {
         user ?
         <>
         <NavBar />
-       <ImageSlider images={images}/>
           <Routes>
             <Route path="/cruises" element={<CruisesPage />} />
             <Route path="/exclusive" element={<AllExclusivePage />} />
             <Route path="/inclusive" element={<AllInclusivePage />} />
           </Routes>
+          <ImageSlider images={images}/>
         </>
          :
         <AuthPage setUser={setUser}/>
       }
-    </main>
+    </div>
   );
 }
 

@@ -1,5 +1,39 @@
+body{
+ background-color: gray;
+ margin:auto;
+ 
+}
+.header{
+    height: 40vh;
+    background-image:url("https://cache.marriott.com/Images/Travel_Hub/2880X960_RESORTS_Infinity-Pool-View.jpg?interpolation=progressive-bilinear");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} 
+.title{
+  text-align: left;
+  color:white;
+  
+}
+
+.navBar{
+  text-align:justify ;
+  font-size: larger;
+  border:solid black 1px;
+  background-color: white;
+  height: 3rem;
+}
+
 .slick-slide img {
   margin:auto;
-  width:50%;
-  height:50%;
+  width:50vw;
+  height:50vh;
+}
+.searchBar{
+  align-items: center;
+  text-align: center;
+}
+.vacation{
+  background-color: white;
 }

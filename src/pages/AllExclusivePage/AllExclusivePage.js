@@ -89,7 +89,7 @@ useEffect(()=> {
                     <div>
                         {
                             locations
-                                // .filter((i) => i.category === true)
+                                .filter(location => location.category==1)
                                 .map((location) => {
                                     return (
                                         <main key={location._id}>
@@ -97,7 +97,7 @@ useEffect(()=> {
                                         <h3>{location.destination}</h3>
                                         <img src={location.image} />
                                         <p>{location.text}</p>
-                                        <button onClick={location.url}>BOOK HERE</button>
+                                        <button onClick={location.url}>VIEW RESORT</button>
                                         
                                         </main>                 
                                     )
