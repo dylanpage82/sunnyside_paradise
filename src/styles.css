@@ -1,7 +1,6 @@
 body{
- background-color: gray;
  margin:auto;
- 
+ font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 .header{
     height: 40vh;
@@ -20,9 +19,9 @@ body{
 .navBar{
   text-align:justify ;
   font-size: larger;
-  border:solid black 1px;
   background-color: white;
   height: 3rem;
+  background-color: lightgray;
 }
 
 .slick-slide img {
@@ -36,4 +35,27 @@ body{
 }
 .vacation{
   background-color: white;
+  /* text-align: center; */
+  margin-bottom: 100px;
+  line-break: strict;
+  
 }
+
+
+.vacation p{
+  font-size: x-large;
+}
+.vacation img{
+  height: 60%;
+  width: 60%;
+  /* display:block; */
+  float: left;
+  margin-right: 2rem;
+}
+main{
+  width:60%;
+  margin-left: 20%;
+  /* display:flex; */
+  /* flex-wrap: wrap; */
+}
+

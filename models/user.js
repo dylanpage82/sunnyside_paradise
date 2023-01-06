@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const SALT_ROUNDS = 6
 
 const userSchema = new Schema({
-  name: {type: String, required: true},
+  name: { type: String, required: true },
   email: {
     type: String,
     unique: true,
@@ -17,7 +17,8 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  },
+  isAdmin: { type: Boolean, default: false }
 }, {
   timestamps: true,
   toJSON: {
@@ -29,9 +30,8 @@ const userSchema = new Schema({
 })
 
 userSchema.pre('save', async function (next) {
- 
   if (!this.isModified('password')) return next()
-  
+
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS)
   return next()
 })

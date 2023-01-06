@@ -1,14 +1,14 @@
-const {Schema, model} = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const locationSchema = new Schema({
-    title: String,
-    destination:String,
-    category: String,
-    url: String,
-    image: String,
-    text:String
+  title: String,
+  destination: String,
+  category: String,
+  url: String,
+  image: String,
+  text: String
 }, {
-    timestamps:true
+  timestamps: true
 })
 
 const Location = model('Location', locationSchema)

@@ -14,7 +14,7 @@ const dataController = {
       }
     })
   },
-  
+
   destroy (req, res, next) {
     Location.findByIdAndDelete(req.params.id, (err, deletedLocation) => {
       if (err) {
@@ -27,7 +27,7 @@ const dataController = {
       }
     })
   },
-  
+
   update (req, res, next) {
     Location.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedLocation) => {
       if (err) {
@@ -40,9 +40,8 @@ const dataController = {
       }
     })
   },
-  
+
   create (req, res, next) {
-    
     Location.create(req.body, (err, createdLocation) => {
       if (err) {
         res.status(404).send({
@@ -55,7 +54,6 @@ const dataController = {
     })
   },
 
-  
   show (req, res, next) {
     Location.findById(req.params.id, (err, foundLocation) => {
       if (err) {
@@ -71,12 +69,12 @@ const dataController = {
 }
 
 const apiController = {
-    index(req, res, next){
-      res.json(res.locals.data.locations)
-    },
-    show(req, res, next){
-      res.json(res.locals.data.locations)
-    }
+  index (req, res) {
+    res.json(res.locals.data.locations)
+  },
+  show (req, res) {
+    res.json(res.locals.data.location)
   }
+}
 
-module.exports = {dataController, apiController}
+module.exports = { dataController, apiController }
