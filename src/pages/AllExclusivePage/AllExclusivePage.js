@@ -41,7 +41,7 @@ export default function AllExclusivePage (props) {
                         }
                     </main>
                     )
-                  : <h1>Error</h1>
+                  : <h1>Resorts</h1>
             }
     </>
   )

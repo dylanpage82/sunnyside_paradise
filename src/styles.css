@@ -35,7 +35,6 @@ body{
 }
 .vacation{
   background-color: white;
-  /* text-align: center; */
   margin-bottom: 100px;
   line-break: strict;
   
@@ -48,14 +47,18 @@ body{
 .vacation img{
   height: 60%;
   width: 60%;
-  /* display:block; */
   float: left;
   margin-right: 2rem;
 }
 main{
   width:60%;
   margin-left: 20%;
-  /* display:flex; */
-  /* flex-wrap: wrap; */
 }
-
+.create{
+  text-align: center;
+}
+.text{
+  height: 100px;
+  width: 40%;
+  word-wrap: break-word;
+}
