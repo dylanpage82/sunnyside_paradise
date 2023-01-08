@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 
 export default function CruisesPage (props) {
   const [locations, setLocations] = useState([])
-  const [foundLocation, setFoundLocation] = useState(null)
 
   const getLocations = async () => {
     try {
@@ -16,7 +15,7 @@ export default function CruisesPage (props) {
 
   useEffect(() => {
     getLocations()
-  }, [foundLocation])
+  }, [])
 
   return (
     <>
@@ -32,7 +31,7 @@ export default function CruisesPage (props) {
                                   <article key={location._id} className='vacation'>
                                     <h1>{location.title}</h1>
                                     <h3>{location.destination}</h3>
-                                    <img src={location.image} />
+                                    <img src={location.image} alt='' />
                                     <p>{location.text}</p>
                                     <button className='resort' onClick={() => { window.location.href = location.url }}>VIEW RESORT</button>
 
@@ -42,7 +41,7 @@ export default function CruisesPage (props) {
                         }
                     </main>
                     )
-                  : <h1 />
+                  : <h1>Error</h1>
             }
     </>
   )

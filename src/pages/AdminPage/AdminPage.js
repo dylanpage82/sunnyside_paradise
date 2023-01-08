@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function AdminPage ({ user }) {
   const [locations, setLocations] = useState([])
@@ -11,6 +12,7 @@ export default function AdminPage ({ user }) {
     image: '',
     text: ''
   })
+
   const getLocations = async () => {
     try {
       const response = await fetch('/api/locations')
@@ -31,26 +33,11 @@ export default function AdminPage ({ user }) {
       })
       const data = await response.json()
       setFoundLocation(data)
-      console.log(foundLocation)
     } catch (error) {
       console.error(error)
     }
   }
-  const updateLocation = async (id, updatedData) => {
-    try {
-      const response = await fetch(`/api/locations/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ ...updatedData })
-      })
-      const data = await response.json()
-      setFoundLocation(data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
+
   const createLocation = async () => {
     try {
       const response = await fetch('/api/locations', {
@@ -74,10 +61,6 @@ export default function AdminPage ({ user }) {
       console.error(error)
     }
   }
-  const handleSubmit = (evt) => {
-    evt.preventDefault()
-    createLocation()
-  }
 
   const handleChange = (evt) => {
     setNewLocation({ ...newLocation, [evt.target.name]: evt.target.value })
@@ -89,15 +72,13 @@ export default function AdminPage ({ user }) {
 
   return (
     <>
-
-      <form onSubmit={handleSubmit}>
-        Title <input type='text' name='title' value={newLocation.title} onChange={handleChange} /> <br />
-        Destination <input type='text' name='destination' value={newLocation.destination} onChange={handleChange} /> <br />
-        <input type='text' name='category' value={newLocation.category} onChange={handleChange} /> <br />
-        <input type='text' name='image' value={newLocation.image} onChange={handleChange} /> <br />
-        <input type='text' name='url' value={newLocation.url} onChange={handleChange} /> <br />
-        <input type='text' name='text' value={newLocation.text} onChange={handleChange} /> <br />
-      </form>
+      {'Title '}<input value={newLocation.title} onChange={handleChange} name='title' /><br />
+      {'Destination '}<input value={newLocation.destination} onChange={handleChange} name='destination' /> <br />
+      Category 0, 1, 2<input value={newLocation.category} onChange={handleChange} name='category' /><br />
+      {'Image '}<input value={newLocation.image} onChange={handleChange} name='image' /><br />
+      Url <input value={newLocation.url} onChange={handleChange} name='url' /><br />
+      Text<input value={newLocation.text} onChange={handleChange} name='text' /> <br />
+      <button onClick={() => createLocation()}>Create New Resort</button>
       {
                 user && user.isAdmin
                   ? (
@@ -108,8 +89,9 @@ export default function AdminPage ({ user }) {
                                 return (
                                   <article key={location._id} className='vacation'>
                                     <h1>{location.title}</h1>
+                                    <Link to={`/location/${location._id}`}>Edit</Link>
                                     <h3>{location.destination}</h3>
-                                    <img src={location.image} />
+                                    <img src={location.image} alt='' />
                                     <p>{location.text}</p>
                                     <button className='resort' onClick={() => { window.location.href = location.url }}>VIEW RESORT</button>
                                     <button onClick={() => deleteLocation(location._id)}>Delete</button>
