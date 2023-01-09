@@ -9,7 +9,8 @@ HTML, CSS, JavaScript, MongoDB, JSX, Node.js, React.js, MDB Bootstrap, JSON,
 
 ## Getting Started
 [TrelloBoard](https://trello.com/b/bY2zvuo8/vacation-destination)\
-[ERD](https://lucid.app/lucidchart/43ac06cc-1047-4923-b6d5-c23bb21eecde/edit?beaconFlowId=10E7ABCF3FCFBC69&invitationId=inv_8e00a7a2-18a7-4e08-9539-ecadc3c9cb11&page=0_0#)
+[ERD](https://lucid.app/lucidchart/43ac06cc-1047-4923-b6d5-c23bb21eecde/edit?beaconFlowId=10E7ABCF3FCFBC69&invitationId=inv_8e00a7a2-18a7-4e08-9539-ecadc3c9cb11&page=0_0#)\
+[WebSite](https://sunnyside-paradise.herokuapp.com/)
 
 ## Unsolved Problems
 I was unable to solve the problem of the error message being displayed for half a second while the page switches.
