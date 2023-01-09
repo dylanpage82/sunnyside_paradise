@@ -72,7 +72,12 @@ export default function AdminPage ({ user }) {
 
   return (
     <>
-    <div className='create'>
+    
+      {
+                user && user.isAdmin
+                  ? (
+                    <>
+                    <div className='create'>
       {'Title '}<input value={newLocation.title} onChange={handleChange} name='title' /><br />
       {'Destination '}<input value={newLocation.destination} onChange={handleChange} name='destination' /> <br />
       Category 0, 1, 2<input value={newLocation.category} onChange={handleChange} name='category' /><br />
@@ -81,9 +86,6 @@ export default function AdminPage ({ user }) {
       Text<input value={newLocation.text} onChange={handleChange} name='text' /> <br />
       <button onClick={() => createLocation()}>Create New Resort</button>
       </div>
-      {
-                user && user.isAdmin
-                  ? (
                     <main>
                       {
                             locations
@@ -103,6 +105,7 @@ export default function AdminPage ({ user }) {
                               })
                         }
                     </main>
+                    </>
                     )
                   : <h1>YOU ARE NOT AUTHORIZED TO VIEW THIS PAGE</h1>
             }

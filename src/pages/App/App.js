@@ -34,8 +34,12 @@ export default function App () {
             <ImageSlider images={images} />
             <Footer />
             </>
-          : <AuthPage setUser={setUser} />
+            
+          : 
+          <AuthPage setUser={setUser} />
+         
       }
+      
     </div>
   )
 }
