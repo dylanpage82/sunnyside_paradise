@@ -1,6 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-export default function NavBar () {
+
+export default function NavBar ({setUser}) {
+  const navigate = useNavigate()
+
+const handleClick = (evt) => {
+  setUser(null)
+  localStorage.clear()
+  navigate("/auth")
+  
+}
   return (
     <>
       <nav className='navBar'>
@@ -11,6 +20,7 @@ export default function NavBar () {
         <Link to='/exclusive'>Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
         <Link to='/admin'>Admin Page</Link>
+      <button className='logout' onClick={handleClick}>LogOut</button>
       </nav>
 
     </>

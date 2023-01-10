@@ -23,7 +23,7 @@ export default function App () {
       {
         user
           ? <>
-            <NavBar />
+            <NavBar setUser={setUser}/>
             <Routes>
               <Route path='/cruises' element={<CruisesPage />} />
               <Route path='/exclusive' element={<AllExclusivePage />} />
@@ -36,7 +36,14 @@ export default function App () {
             </>
             
           : 
-          <AuthPage setUser={setUser} />
+          <>
+          <Routes>
+            <Route path='/auth' element={<AuthPage setUser={setUser} />} />
+          </Routes>
+          <ImageSlider images={images} />
+          <Footer />
+          </>
+          
          
       }
       

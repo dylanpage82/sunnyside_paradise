@@ -74,3 +74,9 @@ form {
   gap: 1.25vmin;
   color: var(--text-light);
 }
+.logout{
+  background: none!important;
+  border: none;
+  text-decoration: underline;
+  align-items:left
+}
