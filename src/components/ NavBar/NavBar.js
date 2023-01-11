@@ -16,7 +16,7 @@ const handleClick = (evt) => {
         <div className='container'>
         <Link className='left' to='/inclusive'>All Inclusive Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
-        <Link to='/cruises'>Cruises</Link>
+        <Link to='/'>Cruises</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
         <Link to='/exclusive'>Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;

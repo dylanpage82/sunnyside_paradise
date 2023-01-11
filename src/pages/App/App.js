@@ -40,7 +40,7 @@ export default function App () {
           ? <>
             <NavBar setUser={setUser}/>
             <Routes>
-              <Route path='/cruises' element={<CruisesPage locations={locations}/>} />
+              <Route path='/' element={<CruisesPage locations={locations}/>} />
               <Route path='/exclusive' element={<AllExclusivePage  locations={locations}/> } />
               <Route path='/inclusive' element={<AllInclusivePage locations={locations}/> }  />
               <Route path='/admin' element={<AdminPage user={user} />} />
