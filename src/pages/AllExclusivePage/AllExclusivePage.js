@@ -1,8 +1,5 @@
 
-
-export default function AllExclusivePage ({locations}) {
-  
-
+export default function AllExclusivePage ({ locations }) {
   return (
     <>
       {

@@ -38,30 +38,26 @@ export default function App () {
       {
         user
           ? <>
-            <NavBar setUser={setUser}/>
+            <NavBar setUser={setUser} />
             <Routes>
-              <Route path='/' element={<CruisesPage locations={locations}/>} />
-              <Route path='/exclusive' element={<AllExclusivePage  locations={locations}/> } />
-              <Route path='/inclusive' element={<AllInclusivePage locations={locations}/> }  />
+              <Route path='/cruises' element={<CruisesPage locations={locations} />} />
+              <Route path='/exclusive' element={<AllExclusivePage locations={locations} />} />
+              <Route path='/inclusive' element={<AllInclusivePage locations={locations} />} />
               <Route path='/admin' element={<AdminPage user={user} />} />
               <Route path='/location/:id' element={<EditPage />} />
             </Routes>
             <ImageSlider images={images} />
             <Footer />
-            </>
-            
-          : 
-          <>
-          <Routes>
-            <Route path='/auth' element={<AuthPage setUser={setUser} />} />
-          </Routes>
-          <ImageSlider images={images} />
-          <Footer />
           </>
-          
-         
+
+          : <>
+            <AuthPage setUser={setUser} />
+            <ImageSlider images={images} />
+            <Footer />
+          </>
+
       }
-      
+
     </div>
   )
 }

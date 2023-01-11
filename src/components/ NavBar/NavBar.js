@@ -1,28 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom'
 
-
-export default function NavBar ({setUser}) {
+export default function NavBar ({ setUser }) {
   const navigate = useNavigate()
 
-const handleClick = (evt) => {
-  setUser(null)
-  localStorage.clear()
-  navigate("/auth")
-  
-}
+  const handleClick = (evt) => {
+    setUser(null)
+    localStorage.clear()
+    navigate('/auth')
+  }
   return (
     <>
       <nav className='navBar'>
         <div className='container'>
-        <Link className='left' to='/inclusive'>All Inclusive Resorts</Link>
+          <Link className='left' to='/inclusive'>All Inclusive Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
-        <Link to='/'>Cruises</Link>
+          <Link to='/cruises'>Cruises</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
-        <Link to='/exclusive'>Resorts</Link>
+          <Link to='/exclusive'>Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
-        <Link to='/admin'>Admin Page</Link>
+          <Link to='/admin'>Admin Page</Link>
         </div>
-      <button className='logout' onClick={handleClick}>LogOut</button>
+        <button className='logout' onClick={handleClick}>LogOut</button>
       </nav>
 
     </>

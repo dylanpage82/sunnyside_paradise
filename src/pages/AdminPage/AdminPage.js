@@ -72,22 +72,22 @@ export default function AdminPage ({ user }) {
 
   return (
     <>
-    
+
       {
                 user && user.isAdmin
                   ? (
                     <>
-                    <div className='create'>
-      {'Title '}<input value={newLocation.title} onChange={handleChange} name='title' /><br />
-      {'Destination '}<input value={newLocation.destination} onChange={handleChange} name='destination' /> <br />
-      Category 0, 1, 2<input value={newLocation.category} onChange={handleChange} name='category' /><br />
-      {'Image '}<input value={newLocation.image} onChange={handleChange} name='image' /><br />
-      Url <input value={newLocation.url} onChange={handleChange} name='url' /><br />
-      Text<input value={newLocation.text} onChange={handleChange} name='text' /> <br />
-      <button onClick={() => createLocation()}>Create New Resort</button>
-      </div>
-                    <main>
-                      {
+                      <div className='create'>
+                        {'Title '}<input value={newLocation.title} onChange={handleChange} name='title' /><br />
+                        {'Destination '}<input value={newLocation.destination} onChange={handleChange} name='destination' /> <br />
+                        Category 0, 1, 2<input value={newLocation.category} onChange={handleChange} name='category' /><br />
+                        {'Image '}<input value={newLocation.image} onChange={handleChange} name='image' /><br />
+                        Url <input value={newLocation.url} onChange={handleChange} name='url' /><br />
+                        Text<input value={newLocation.text} onChange={handleChange} name='text' /> <br />
+                        <button onClick={() => createLocation()}>Create New Resort</button>
+                      </div>
+                      <main>
+                        {
                             locations
                               .map((location) => {
                                 return (
@@ -104,7 +104,7 @@ export default function AdminPage ({ user }) {
                                 )
                               })
                         }
-                    </main>
+                      </main>
                     </>
                     )
                   : <h1>YOU ARE NOT AUTHORIZED TO VIEW THIS PAGE</h1>

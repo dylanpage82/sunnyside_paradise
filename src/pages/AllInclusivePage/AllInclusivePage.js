@@ -1,14 +1,9 @@
 
-export default function AllInclusivePage ({locations}) {
-
-
-
-  
-
+export default function AllInclusivePage ({ locations }) {
   return (
     <>
       {
-                locations 
+                locations
                   ? (
                     <main>
                       {

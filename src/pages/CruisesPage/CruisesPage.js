@@ -1,7 +1,5 @@
 
-export default function CruisesPage ({locations}) {
-  
-
+export default function CruisesPage ({ locations }) {
   return (
     <>
       {
