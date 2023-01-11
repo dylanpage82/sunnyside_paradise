@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AuthPage from '../AuthPage/AuthPage'
 import AllInclusivePage from '../AllInclusivePage/AllInclusivePage'
 import CruisesPage from '../CruisesPage/CruisesPage'
@@ -11,9 +11,24 @@ import { Routes, Route } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
 import AdminPage from '../AdminPage/AdminPage'
 import EditPage from '../EditPage/EditPage'
+import { getUser } from '../../utilities/users-service'
 
 export default function App () {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(getUser)
+  const [locations, setLocations] = useState(null)
+
+  const getLocations = async () => {
+    try {
+      const response = await fetch('/api/locations')
+      const data = await response.json()
+      setLocations(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  useEffect(() => {
+    getLocations()
+  }, [])
 
   return (
     <div className='App'>
@@ -25,9 +40,9 @@ export default function App () {
           ? <>
             <NavBar setUser={setUser}/>
             <Routes>
-              <Route path='/cruises' element={<CruisesPage />} />
-              <Route path='/exclusive' element={<AllExclusivePage />} />
-              <Route path='/inclusive' element={<AllInclusivePage />} />
+              <Route path='/cruises' element={<CruisesPage locations={locations}/>} />
+              <Route path='/exclusive' element={<AllExclusivePage  locations={locations}/> } />
+              <Route path='/inclusive' element={<AllInclusivePage locations={locations}/> }  />
               <Route path='/admin' element={<AdminPage user={user} />} />
               <Route path='/location/:id' element={<EditPage />} />
             </Routes>

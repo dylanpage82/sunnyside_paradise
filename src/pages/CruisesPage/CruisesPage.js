@@ -1,21 +1,6 @@
-import { useState, useEffect } from 'react'
 
-export default function CruisesPage (props) {
-  const [locations, setLocations] = useState([])
-
-  const getLocations = async () => {
-    try {
-      const response = await fetch('/api/locations')
-      const data = await response.json()
-      setLocations(data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  useEffect(() => {
-    getLocations()
-  }, [])
+export default function CruisesPage ({locations}) {
+  
 
   return (
     <>

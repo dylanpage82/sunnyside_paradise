@@ -19,9 +19,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
 app.use(require('./config/checkToken'))
-/*
-app.use('/api', routes) <====== Finish code once you got it
-*/
+
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/locations', require('./routes/api/locations'))
 

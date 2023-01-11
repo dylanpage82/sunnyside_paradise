@@ -17,6 +17,7 @@ body{
 }
 
 .navBar{
+  display:flex;
   text-align:justify ;
   font-size: larger;
   background-color: white;

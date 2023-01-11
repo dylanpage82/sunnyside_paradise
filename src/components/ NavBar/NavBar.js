@@ -13,6 +13,7 @@ const handleClick = (evt) => {
   return (
     <>
       <nav className='navBar'>
+        <div className='container'>
         <Link className='left' to='/inclusive'>All Inclusive Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
         <Link to='/cruises'>Cruises</Link>
@@ -20,6 +21,7 @@ const handleClick = (evt) => {
         <Link to='/exclusive'>Resorts</Link>
       &nbsp;&nbsp; | &nbsp;&nbsp;
         <Link to='/admin'>Admin Page</Link>
+        </div>
       <button className='logout' onClick={handleClick}>LogOut</button>
       </nav>
 
